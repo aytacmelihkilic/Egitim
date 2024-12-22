@@ -1,0 +1,137 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION, SOCIAL_LINKS } from '../consts';
+---
+
+<!doctype html>
+<html lang="tr">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<div class="hero">
+				<div class="container">
+					<h1>Merhaba, Ben Aytaç Melih Kılıç</h1>
+					<p class="lead">
+						Yenilikçi ve verimli çözümler geliştirmeye odaklanan tutkulu bir yazılım geliştiricisiyim. 
+						Modern web uygulamaları inşa ediyor ve karmaşık teknik zorlukları çözmekten keyif alıyorum.
+					</p>
+					<div class="cta-buttons">
+						<a href="/blog" class="btn btn-primary">Projelerimi Gör</a>
+						<a href="/about" class="btn btn-primary">Hakkımda</a>
+					</div>
+				</div>
+			</div>
+
+			<section class="container section">
+				<h2 class="section-title">Neler Yapıyorum?</h2>
+				<div class="services-grid">
+					<div class="service-card card">
+						<h3>Web Geliştirme</h3>
+						<p>Modern teknolojiler kullanarak duyarlı ve hızlı web uygulamaları geliştiriyorum.</p>
+					</div>
+					<div class="service-card card">
+						<h3>Backend Geliştirme</h3>
+						<p>Güçlü ve ölçeklenebilir sunucu tarafı çözümleri ve API'ler oluşturuyorum.</p>
+					</div>
+					<div class="service-card card">
+						<h3>Veri Yönetimi</h3>
+						<p>SQL Server ve modern araçlar ile veri entegrasyonu ve yönetimini sağlıyorum.</p>
+					</div>
+				</div>
+			</section>
+
+			<section class="container section">
+				<h2 class="section-title">Bağlantı Kuralım</h2>
+				<div class="connect-content">
+					<p>
+						Yeni fırsatlar ve iş birlikleri hakkında konuşmak her zaman ilgimi çeker.
+						Beraber neler yapabileceğimizi konuşalım!
+					</p>
+					<div class="social-links">
+						<a href={SOCIAL_LINKS.linkedin} target="_blank" class="btn btn-primary">LinkedIn</a>
+						<a href={SOCIAL_LINKS.github} target="_blank" class="btn btn-secondary">GitHub</a>
+					</div>
+				</div>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	.hero {
+    background: linear-gradient(to right, #4a90e2, #7b61ff); /* Mavi ve Mor tonlarında gradyan */
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+	.hero h1 {
+		font-size: 3rem;
+		margin-bottom: 1rem;
+	}
+
+	.lead {
+		font-size: 1.25rem;
+		max-width: 800px;
+		margin: 0 auto 2rem;
+	}
+
+	.cta-buttons {
+		display: flex;
+		gap: 1rem;
+		justify-content: center;
+	}
+
+	.section {
+		padding: 4rem 0;
+	}
+
+	.services-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+		margin-top: 2rem;
+	}
+
+	.service-card {
+		text-align: center;
+	}
+
+	.service-card h3 {
+		color: var(--primary);
+		margin-bottom: 1rem;
+	}
+
+	.connect-content {
+		text-align: center;
+		max-width: 600px;
+		margin: 0 auto;
+	}
+
+	.social-links {
+		display: flex;
+		gap: 1rem;
+		justify-content: center;
+		margin-top: 2rem;
+	}
+
+	@media (max-width: 768px) {
+		.hero h1 {
+			font-size: 2rem;
+		}
+
+		.lead {
+			font-size: 1.1rem;
+		}
+
+		.services-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>
